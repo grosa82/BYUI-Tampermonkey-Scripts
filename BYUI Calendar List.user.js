@@ -54,7 +54,7 @@ function highlightNextNDays(numDays) {
     $(".d2l-textblock.d2l-textblock-strong.d2l-left").each(function(){
         var obj = $(this);
         var text = $(this).html();
-        var id = text + obj.parent().children().eq(0).children().eq(1).html().substr(0,9);
+        var id = text.replace("'", "") + obj.parent().children().eq(0).children().eq(1).html().substr(0,9);
         if (text.indexOf('Available') > -1) {
           $(this).parent().parent().parent().parent().parent().css("opacity", 0.2);
         } else {
